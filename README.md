@@ -13,7 +13,7 @@ Very recently I developed a plugin for Unity3D to deal with animation root motio
 
 When I was dealing with exported animations to test the plugin I developed, I discovered that the Blender's exporter comes with two limitations: It does export a ghost root bone called 'Armature' and it does import one keyframe ahead of frame 0.
 
-I made the modification in my Blender's installation and now I'm sharing my code here.
+I made the modification in my Blender's installation and now I'm sharing the code here.
 
 ### First Problem With Blender FBX Exporting
 
@@ -33,7 +33,7 @@ The 'Armature' is part of the [Blender](https://www.blender.org/)'s data. And th
 
 This image below shows the original model from [Mixamo](https://www.mixamo.com/) on the left side and the exported model from [Blender](https://www.blender.org/) default FBX exporter.
 
-![export problem image](https://github.com/A-Ribeiro/CustomBlenderFBXExporter/raw/master/images/export_problem.jpg)
+![export problem image](images/export_problem.jpg)
 
 ### Second Problem (On Import)
 
@@ -43,7 +43,7 @@ This causes the animation to have a 'hiccup' when we need to export it back.
 
 The animation import problem is on top of the image and the correct animation frames position is on the bottom of the image.
 
-![import problem image](https://github.com/A-Ribeiro/CustomBlenderFBXExporter/raw/master/images/import_problem.jpg)
+![import problem image](images/import_problem.jpg)
 
 # The Custom Exporter
 
@@ -146,26 +146,26 @@ I hope it can be useful.
 
 2. Open Edit > Preferences...
 
-![image preferences](https://github.com/A-Ribeiro/CustomBlenderFBXExporter/raw/master/images/edit_preferences.jpg)
+![image preferences](images/edit_preferences.jpg)
 
 3. Click Add-ons
 
-![image addons](https://github.com/A-Ribeiro/CustomBlenderFBXExporter/raw/master/images/addons.jpg)
+![image addons](images/addons.jpg)
 
 4. Click on Testing
 
-![image testing](https://github.com/A-Ribeiro/CustomBlenderFBXExporter/raw/master/images/testing.jpg)
+![image testing](images/testing.jpg)
 
 5. Click on Install and select the release file you downloaded.
 
-![image install](https://github.com/A-Ribeiro/CustomBlenderFBXExporter/raw/master/images/install.jpg)
+![image install](images/install.jpg)
 
 6. Click on the checkbox to enable the Add-on
 
-![image enable addon](https://github.com/A-Ribeiro/CustomBlenderFBXExporter/raw/master/images/enable.jpg)
+![image enable addon](images/enable.jpg)
 
 ### Check Add-on Is Installed Correctly
 
 You can check if the add-on is installed correctly if you see the '@aRibeiro' in the import/export menu of the [Blender](https://www.blender.org/) as shown in the image below:
 
-![image import/export](https://github.com/A-Ribeiro/CustomBlenderFBXExporter/raw/master/images/import_export.jpg)
+![image import/export](images/import_export.jpg)
