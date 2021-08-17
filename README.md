@@ -134,7 +134,7 @@ I decremented 1 frame index in the keyframe insertion part:
 
 ### Feel Free to Make Your Own Modifications
 
-I marked with the text '# [Alessandro]' in all the parts I changed in the source code.
+I marked with the text `# [Alessandro]` in all the parts I changed in the source code.
 
 If you don't want to install this version, you can do the changes by yourself.
 
