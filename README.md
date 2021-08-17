@@ -142,7 +142,7 @@ I hope it can be useful.
 
 # How To Install On Blender
 
-1. Download the [current release zip file]() from GitHub.
+1. Download the [current release zip file](https://github.com/A-Ribeiro/CustomBlenderFBXExporter/releases) from GitHub.
 
 2. Open Edit > Preferences...
 
