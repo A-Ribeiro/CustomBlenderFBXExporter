@@ -542,7 +542,7 @@ def fbx_data_element_custom_properties(props, bid):
     rna_properties = {prop.identifier for prop in bid.bl_rna.properties if prop.is_runtime}
 
     for k, v in items:
-        if k == '_RNA_UI' or k in rna_properties:
+        if k in rna_properties:
             continue
 
         list_val = getattr(v, "to_list", lambda: None)()
@@ -879,7 +879,10 @@ def fbx_data_mesh_elements(root, me_obj, scene_data, done_meshes):
 
         if last_subsurf:
             elem_data_single_int32(geom, b"Smoothness", 2) # Display control mesh and smoothed
-            elem_data_single_int32(geom, b"BoundaryRule", 2) # Round edges like Blender
+            if last_subsurf.boundary_smooth == "PRESERVE_CORNERS":
+                elem_data_single_int32(geom, b"BoundaryRule", 2) # CreaseAll
+            else:
+                elem_data_single_int32(geom, b"BoundaryRule", 1) # CreaseEdge
             elem_data_single_int32(geom, b"PreviewDivisionLevels", last_subsurf.levels)
             elem_data_single_int32(geom, b"RenderDivisionLevels", last_subsurf.render_levels)
 
@@ -2065,7 +2068,6 @@ def fbx_animations(scene_data):
     def add_anim(animations, animated, anim):
         nonlocal frame_start, frame_end
         if anim is not None:
-
             # [Alessandro] Remove 'Armature|' animation name...
             if scene_data.settings.remove_ghost_armature_root_node_from_export:
                 _astack_key, astack, _alayer_key, _name, _fstart, _fend = anim
@@ -2078,7 +2080,6 @@ def fbx_animations(scene_data):
                 animations.append((_astack_key, astack, _alayer_key, _name, _fstart, _fend))
             else:
                 animations.append(anim)
-
             f_start, f_end = anim[4:6]
             if f_start < frame_start:
                 frame_start = f_start
@@ -3245,7 +3246,7 @@ def save(operator, context,
             for scene in scenes:
                 if not scene.objects:
                     continue
-                #                                      Needed to avoid having tens of 'Master Collection' entries.
+                # Needed to avoid having tens of 'Scene Collection' entries.
                 todo_collections = [(scene.collection, "_".join((scene.name, scene.collection.name)))]
                 while todo_collections:
                     coll, coll_name = todo_collections.pop()

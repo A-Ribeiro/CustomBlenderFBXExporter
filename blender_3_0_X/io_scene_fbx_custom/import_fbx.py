@@ -1936,7 +1936,8 @@ class FbxImportHelperNode:
         for _, m in self.clusters:
             meshes.update(m)
         for child in self.children:
-            child.collect_skeleton_meshes(meshes)
+            if not child.meshes:
+                child.collect_skeleton_meshes(meshes)
 
     def collect_armature_meshes(self):
         if self.is_armature:
@@ -2928,6 +2929,11 @@ def load(operator, context, filepath="",
                             mod = parent.bl_obj.modifiers.new('subsurf', 'SUBSURF')
                             mod.levels = preview_levels
                             mod.render_levels = render_levels
+                            boundary_rule = elem_prop_first(elem_find_first(fbx_sdata, b'BoundaryRule'), default=1)
+                            if boundary_rule == 2:
+                                mod.boundary_smooth = "PRESERVE_CORNERS"
+                            else:
+                                mod.boundary_smooth = "ALL"
 
         _(); del _
 
@@ -3213,7 +3219,7 @@ def load(operator, context, filepath="",
                                 break
 
                     for obj in (obj for obj in bpy.data.objects if obj.data == mesh):
-                        obj.cycles_visibility.shadow = False
+                        obj.visible_shadow = False
     _(); del _
 
     perfmon.level_down()
