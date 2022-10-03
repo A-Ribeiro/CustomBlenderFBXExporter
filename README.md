@@ -122,7 +122,7 @@ Finally I changed the animation name by removing the 'Armature|' from its beginn
 
 The variable 'FBX_FRAMERATES' was changed and added 2 repeating lines for 30 fps and 30.0/1.001 fps.
 
-This change causes the exported to do the wrong fps assignment to the FBX animation.
+This change causes the exporter to do the wrong fps assignment to the FBX animation.
 
 When importing on Unity, it give us this message:
 
