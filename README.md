@@ -131,7 +131,7 @@ ImportFBX Errors:
 Framerate was set to 0.00, it's been reset to 1.0.
 ```
 
-I modified this file by removing the extra fps selector.
+I modified this file by swapping the extra fps selector.
 
 Take a look at the code below:
 
