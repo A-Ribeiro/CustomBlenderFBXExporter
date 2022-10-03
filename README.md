@@ -118,7 +118,7 @@ Finally I changed the animation name by removing the 'Armature|' from its beginn
         ...
 ```
 
-#### NOTES ON Blender 3.3.0: 'fbx_utils.py'
+### NOTES ON Blender 3.3.0: 'fbx_utils.py'
 
 The variable 'FBX_FRAMERATES' was changed and added 2 repeating lines for 30 fps and 30.0/1.001 fps.
 
@@ -144,10 +144,12 @@ FBX_FRAMERATES = (
     (60.0, 3),
     (50.0, 4),
     (48.0, 5),
+    #[Alessandro] swap drop with full frame selector (BUGFIX exporting)
+    (30.0, 7),  # Drop frame.
     (30.0, 6),  # BW NTSC, full frame.
-    #[Alessandro] (30.0, 7),  # Drop frame.
+    #[Alessandro] swap drop with full frame selector (BUGFIX exporting)
+    (30.0 / 1.001, 8),  # Color NTSC, drop frame.
     (30.0 / 1.001, 9),  # Color NTSC, full frame.
-    #[Alessandro] (30.0 / 1.001, 8),  # Color NTSC, drop frame.
     (25.0, 10),
     (24.0, 11),
     #(1.0, 12),  # 1000 milli/s (use for date time?).
