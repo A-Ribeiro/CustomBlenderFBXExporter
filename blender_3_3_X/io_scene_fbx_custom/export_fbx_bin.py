@@ -2036,8 +2036,8 @@ def fbx_animations_do(scene_data, ref_id, f_start, f_end, start_zero, objects=No
         if anim_camera_focus_distance:
             for elem_key, group_key, group, fbx_group, fbx_gname in \
                     anim_camera_focus_distance.get_final_data(scene, ref_id, force_keep):
-            anim_data = animations.setdefault(elem_key, ("dummy_unused_key", {}))
-            anim_data[1][fbx_group] = (group_key, group, fbx_gname)
+                anim_data = animations.setdefault(elem_key, ("dummy_unused_key", {}))
+                anim_data[1][fbx_group] = (group_key, group, fbx_gname)
 
     astack_key = get_blender_anim_stack_key(scene, ref_id)
     alayer_key = get_blender_anim_layer_key(scene, ref_id)
