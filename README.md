@@ -124,7 +124,7 @@ The variable 'FBX_FRAMERATES' was changed and added 2 repeating lines for 30 fps
 
 This change causes the exported to do the wrong fps assignment to the FBX animation.
 
-In Unity it give us this message:
+When importing on Unity, it give us this message:
 
 ```
 ImportFBX Errors:
