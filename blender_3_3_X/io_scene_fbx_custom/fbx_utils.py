@@ -123,9 +123,9 @@ FBX_FRAMERATES = (
     (50.0, 4),
     (48.0, 5),
     (30.0, 6),  # BW NTSC, full frame.
-    (30.0, 7),  # Drop frame.
+    #[Alessandro] (30.0, 7),  # Drop frame.
     (30.0 / 1.001, 9),  # Color NTSC, full frame.
-    (30.0 / 1.001, 8),  # Color NTSC, drop frame.
+    #[Alessandro] (30.0 / 1.001, 8),  # Color NTSC, drop frame.
     (25.0, 10),
     (24.0, 11),
     #(1.0, 12),  # 1000 milli/s (use for date time?).
