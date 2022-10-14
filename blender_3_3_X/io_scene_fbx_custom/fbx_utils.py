@@ -1222,7 +1222,7 @@ FBXExportSettings = namedtuple("FBXExportSettings", (
     "bone_correction_matrix", "bone_correction_matrix_inv",
     "bake_anim", "bake_anim_use_all_bones", "bake_anim_use_nla_strips", "bake_anim_use_all_actions",
     "bake_anim_step", "bake_anim_simplify_factor", "bake_anim_force_startend_keying",
-    "use_metadata", "media_settings", "use_custom_props", 
+    "use_metadata", "media_settings", "use_custom_props",
     "remove_ghost_armature_root_node_from_export", # [Alessandro]
 ))
 

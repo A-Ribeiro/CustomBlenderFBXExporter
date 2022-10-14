@@ -2097,7 +2097,7 @@ def fbx_animations(scene_data):
             ob = ob_obj.bdata  # Back to real Blender Object.
             if not ob.animation_data:
                 continue
-            
+
             # Some actions are read-only, one cause is being in NLA tweakmode
             restore_use_tweak_mode = ob.animation_data.use_tweak_mode
             if ob.animation_data.is_property_readonly('action'):
