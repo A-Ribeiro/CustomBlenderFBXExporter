@@ -9,7 +9,7 @@ John 3:16
 
 # Context & Motivation
 
-Very recently I developed a plugin for Unity3D to deal with animation root motion. You can check the asset url: [http://u3d.as/2F6K](http://u3d.as/2F6K).
+Very recently I developed a plugin for Unity3D to deal with animation root motion. You can check the asset url: [https://u3d.as/2F6K](https://u3d.as/2F6K).
 
 When I was dealing with exported animations to test the plugin I developed, I discovered that the Blender's exporter comes with two limitations: It does export a ghost root bone called 'Armature' and it does import one keyframe ahead of frame 0.
 
