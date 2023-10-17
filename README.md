@@ -146,23 +146,23 @@ I hope it can be useful.
 
 2. Open Edit > Preferences...
 
-![image preferences](images/edit_preferences.jpg)
+![image preferences](images/0_edit_preferences.jpg)
 
 3. Click Add-ons
 
-![image addons](images/addons.jpg)
+![image addons](images/1_addons.jpg)
 
-4. Click on Testing
+4. Click on Community
 
-![image testing](images/testing.jpg)
+![image community](images/2_community.jpg)
 
 5. Click on Install and select the release file you downloaded.
 
-![image install](images/install.jpg)
+![image install](images/3_install.jpg)
 
 6. Click on the checkbox to enable the Add-on
 
-![image enable addon](images/enable.jpg)
+![image enable addon](images/4_enable.jpg)
 
 ### Check Add-on Is Installed Correctly
 
