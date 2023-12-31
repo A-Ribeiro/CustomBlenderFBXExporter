@@ -2320,10 +2320,12 @@ def fbx_animations(scene_data):
             # [Alessandro] Remove 'Armature|' animation name...
             if scene_data.settings.armature_nodetype == 'REMOVE_GHOST':
                 _astack_key, astack, _alayer_key, _name, _fstart, _fend = anim
-
+                # [Choccy] The original function only worked when the armature name is Armature.
+                # I change it a bit so it removed words before '|' and the '|' as well.
                 _name = _name.decode("utf-8")
-                if _name.startswith("Armature|"):
-                    _name = _name[9:]
+                if _name.__contains__("|"):
+                    indexed = _name.find("|")
+                    _name = _name[indexed+1:]
                 _name = _name.encode("utf-8")
 
                 animations.append((_astack_key, astack, _alayer_key, _name, _fstart, _fend))
