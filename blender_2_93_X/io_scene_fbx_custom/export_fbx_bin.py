@@ -2072,7 +2072,7 @@ def fbx_animations(scene_data):
                 # [Choccy] The original function only worked when the armature name is Armature.
                 # I change it a bit so it removed words before '|' and the '|' as well.
                 _name = _name.decode("utf-8")
-                if _name.__contains__("|"):
+                if "|" in _name:
                     indexed = _name.find("|")
                     _name = _name[indexed+1:]
                 _name = _name.encode("utf-8")
