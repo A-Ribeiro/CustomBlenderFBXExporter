@@ -135,6 +135,25 @@ I decremented 1 frame index in the keyframe insertion part:
         keyframes[fc_key].extend((frame-1, value))
 ```
 
+Blender 4.1 changed the animation frame position to another place.
+
+Take a look at the snippet below:
+
+```python
+    def _convert_fbx_time_to_blender_time(key_times, blen_start_offset, fbx_start_offset, fps, fbx_ktime):
+        timefac = fps / fbx_ktime
+
+        # Convert from FBX timing to Blender timing.
+        # Cannot subtract in-place because key_times could be read directly from FBX and could be used by multiple Actions.
+        key_times = key_times - fbx_start_offset
+        # FBX times are integers and timefac is a Python float, so the new array will be a np.float64 array.
+        key_times = key_times * timefac
+
+        key_times += blen_start_offset - 1 #[Alessandro]
+
+        return key_times
+```
+
 ### Feel Free to Make Your Own Modifications
 
 I marked with the text `# [Alessandro]` in all the parts I changed in the source code.
