@@ -174,9 +174,9 @@ I hope it can be useful.
 
 ![image addons](images/1_addons.jpg)
 
-4. Click on Community
+4. Click on Install from Disk
 
-![image community](images/2_community.jpg)
+![image community](images/2_install_from_disk.jpg)
 
 5. Click on Install and select the release file you downloaded.
 
