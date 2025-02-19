@@ -2522,6 +2522,11 @@ def fbx_animations(scene_data):
             if not ob_obj.is_object:
                 continue
 
+            # [Alessandro] Remove Armature node from export
+            if scene_data.settings.armature_nodetype == 'REMOVE_GHOST':
+                if ob_obj.type == 'ARMATURE':
+                    continue
+
             ob = ob_obj.bdata  # Back to real Blender Object.
 
             if not ob.animation_data:
